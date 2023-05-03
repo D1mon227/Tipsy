@@ -112,7 +112,7 @@ extension CalculatorViewController {
     
     private func addConstraints() {
         calculateViews.firstStack.snp.makeConstraints { make in
-            make.trailing.leading.equalTo(view.safeAreaLayoutGuide)
+            make.trailing.leading.equalToSuperview().inset(50)
             make.top.equalTo(view.safeAreaLayoutGuide).inset(10)
         }
         
@@ -130,7 +130,6 @@ extension CalculatorViewController {
         
         calculateViews.billLabel.snp.makeConstraints { make in
             make.height.equalTo(30)
-            make.leading.trailing.equalToSuperview().inset(50)
         }
         
         calculateViews.billTextField.snp.makeConstraints { make in
